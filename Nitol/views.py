@@ -5,7 +5,13 @@ from store.models import Category
 
 def home(request):
     products = Product.objects.all()[:12]  # limit for homepage
-    return render(request, 'home/home.html', {'products': products})
+    offered_products = Product.objects.all()[:4]   # first 4
+    for_you_products = Product.objects.order_by('?')[:4]  # random
+
+    return render(request, 'home/home.html', {
+        'offered_products': offered_products,
+        'for_you_products': for_you_products
+    })
 
 def about(request):
     return render(request, 'about/about.html')
@@ -14,18 +20,22 @@ def ai(request):
     return render (request, 'ai/ai.html')
 
 def products(request):
-    category_id = request.GET.get('category')  # get from URL
+    query = request.GET.get('q')
+    category_id = request.GET.get('category')
+
+    products = Product.objects.all()   # ✅ FIRST define
 
     if category_id:
-        products = Product.objects.filter(category_id=category_id)
-    else:
-        products = Product.objects.all()
+        products = products.filter(category_id=category_id)
 
-    categories = Category.objects.all()
+    if query:
+        products = products.filter(name__icontains=query)
+
+    categories = Category.objects.all()   # ✅ ADD THIS
 
     return render(request, 'products/products.html', {
         'products': products,
-        'categories': categories
+        'categories': categories,
     })
 
 def cart(request):
