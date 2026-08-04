@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'tailwind',
     "django_tailwind_cli",
     'tailwind_theme',
+    'store',
 ]
 TAILWIND_APP_NAME = "tailwind_theme"
 INTERNAL_IPS = [
@@ -129,3 +130,7 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
