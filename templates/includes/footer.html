@@ -1,0 +1,120 @@
+{% load static %}
+
+<!-- 
+  Elegance & Light Green Theme applied:
+  - bg-emerald-50/60: A soft, refreshing, ultra-light green base color.
+  - border-t border-emerald-100: A crisp dividing line defining the upper boundary.
+-->
+<footer
+  class="w-full bg-emerald-50/60 border-t border-emerald-100 text-slate-600 transition-colors duration-300 dark:bg-gray-900"
+>
+  <!-- Main Container -->
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
+  >
+    <!-- Column 1: Logo / Brand Info -->
+    <div class="flex flex-col space-y-4">
+      <div class="flex items-center space-x-3">
+        <img
+          class="w-10 h-10 object-contain transition-transform duration-300 hover:rotate-6 border-green-950 rounded-full"
+          src="{% static 'images/logo.png' %}"
+          alt="Logo"
+        />
+        <span
+          class="font-bold text-xl text-emerald-800 tracking-wide dark:text-white"
+        >
+          Nitol <span class="text-emerald-600 font-medium">Naturals</span>
+        </span>
+      </div>
+      <p
+        class="text-sm text-slate-500 leading-relaxed max-w-sm dark:text-gray-300"
+      >
+        Fresh & organic products for a healthier, more balanced life.
+      </p>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="flex flex-col space-y-4">
+      <h3
+        class="text-xs font-bold tracking-widest text-emerald-800 uppercase dark:text-green-300"
+      >
+        Quick Links
+      </h3>
+      <ul class="space-y-2.5 text-sm font-medium">
+        <li>
+          <a
+            href="/"
+            class="hover:text-emerald-600 transition-colors duration-200 block w-fit dark:text-white"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="/about/"
+            class="hover:text-emerald-600 transition-colors duration-200 block w-fit dark:text-white"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="/products/"
+            class="hover:text-emerald-600 transition-colors duration-200 block w-fit dark:text-white"
+            >Products</a
+          >
+        </li>
+        <li>
+          <a
+            href="/contact/"
+            class="hover:text-emerald-600 transition-colors duration-200 block w-fit dark:text-white"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Contact Details -->
+    <div class="flex flex-col space-y-4">
+      <h3
+        class="text-xs font-bold tracking-widest text-emerald-800 uppercase dark:text-green-300"
+      >
+        Contact
+      </h3>
+      <div class="space-y-2 text-sm text-slate-500 leading-relaxed">
+        <p class="flex items-center gap-2">
+          <span class="text-emerald-600 font-semibold dark:text-white"
+            >Email:</span
+          >
+          <a
+            href="mailto:nitol.falcon@gmail.com"
+            class="hover:text-emerald-600 transition-colors dark:text-white"
+            >nitol.falcon@gmail.com</a
+          >
+        </p>
+        <p class="flex items-center gap-2">
+          <span class="text-emerald-600 font-semibold dark:text-white"
+            >Phone:</span
+          >
+          <a
+            href="tel:+8801757003410"
+            class="hover:text-emerald-600 transition-colors dark:text-white"
+            >+880 1757 003 410</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright Bottom Bar -->
+  <div class="border-t border-emerald-100/60 bg-emerald-100/20 py-4">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 font-medium space-y-2 sm:space-y-0 dark:text-gray-400"
+    >
+      <p>© 2026 Nitol. All rights reserved.</p>
+      <p
+        class="text-emerald-700/60 tracking-wide font-normal dark:text-gray-400"
+      >
+        Embrace yourself with nature.
+      </p>
+    </div>
+  </div>
+</footer>

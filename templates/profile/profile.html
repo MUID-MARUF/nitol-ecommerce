@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Profile | Nitol{% endblock %}
+
+{% block content %}
+
+<div class="max-w-5xl mx-auto">
+
+  <!-- Profile Header -->
+  <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col md:flex-row items-center gap-6">
+
+    <!-- Profile Image -->
+    <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-green-100">
+      <img src="https://via.placeholder.com/150" 
+           class="w-full h-full object-cover" 
+           alt="Profile Image">
+    </div>
+
+    <!-- User Info -->
+    <div class="text-center md:text-left">
+      <h2 class="text-2xl font-bold">Muid Hasan Maruf</h2>
+      <p class="text-gray-500">muid@example.com</p>
+
+      <div class="mt-3 flex gap-3 justify-center md:justify-start">
+        <button class="bg-green-600 text-white px-4 py-1 rounded-lg hover:bg-green-700 transition">
+          Edit Profile
+        </button>
+        <button class="border px-4 py-1 rounded-lg hover:bg-gray-100 transition">
+          Logout
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Profile Content -->
+  <div class="grid md:grid-cols-3 gap-6 mt-6">
+
+    <!-- Left: Account Info -->
+    <div class="md:col-span-2 bg-white p-6 rounded-xl shadow-md">
+      <h3 class="text-lg font-semibold mb-4">Account Information</h3>
+
+      <div class="space-y-3">
+        <p><strong>Full Name:</strong> Muid Hasan Maruf</p>
+        <p><strong>Email:</strong> muid@example.com</p>
+        <p><strong>Phone:</strong> +880 1757 003 410</p>
+        <p><strong>Address:</strong> Dhaka, Bangladesh</p>
+      </div>
+    </div>
+
+    <!-- Right: Quick Stats -->
+    <div class="bg-white p-6 rounded-xl shadow-md">
+      <h3 class="text-lg font-semibold mb-4">Your Activity</h3>
+
+      <div class="space-y-3 text-sm">
+        <p>🛒 Orders: <span class="font-bold">5</span></p>
+        <p>❤️ Wishlist: <span class="font-bold">12</span></p>
+        <p>⭐ Reviews: <span class="font-bold">3</span></p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Recent Orders -->
+  <div class="bg-white p-6 rounded-xl shadow-md mt-6">
+    <h3 class="text-lg font-semibold mb-4">Recent Orders</h3>
+
+    <div class="space-y-4">
+
+      <div class="flex justify-between items-center border-b pb-2">
+        <span>Order #1023</span>
+        <span class="text-green-600 font-medium">Delivered</span>
+      </div>
+
+      <div class="flex justify-between items-center border-b pb-2">
+        <span>Order #1022</span>
+        <span class="text-yellow-500 font-medium">Processing</span>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <span>Order #1021</span>
+        <span class="text-red-500 font-medium">Cancelled</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

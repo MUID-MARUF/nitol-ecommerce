@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block title %}Products | Nitol{% endblock %}
+{%block content %}
+
+<div class="p-6">
+  <h1 class="text-2xl font-bold mb-6">Our Products</h1>
+
+  <div class="flex flex-wrap gap-6 justify-center">
+    {% for i in "123" %}
+    <div class="w-full sm:w-[48%] md:w-[30%] lg:w-[22%]">
+      {% include "includes/components/productCard.html" %}
+    </div>
+    {% endfor %}
+  </div>
+
+  {% endblock %}
+</div>

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}AI Assistant | Nitol{% endblock %}
+
+{% block content %}
+<div>
+  <br>
+</div>
+<div class="max-w-4xl mx-auto flex flex-col h-[80vh] bg-white shadow-xl rounded-2xl overflow-hidden">
+
+  <!-- Header -->
+  <div class="bg-green-600 text-white p-4 flex items-center justify-between">
+    <h2 class="text-lg font-semibold">Nitol AI Assistant 🌿</h2>
+    <span class="text-sm opacity-80">Online</span>
+  </div>
+  <div>
+
+  </div>
+  <!-- Chat Messages Area -->
+  <div id="chat-box" class="flex-1 p-4 overflow-y-auto space-y-4 bg-gray-50">
+
+    <!-- AI Message -->
+    <div class="flex">
+      <div class="bg-white p-3 rounded-xl shadow max-w-xs">
+        Hello! How can I help you today? 😊
+      </div>
+    </div>
+
+    <!-- User Message -->
+    <div class="flex justify-end">
+      <div class="bg-green-600 text-white p-3 rounded-xl shadow max-w-xs">
+        Show me skincare products
+      </div>
+    </div>
+
+    <!-- AI Response -->
+    <div class="flex">
+      <div class="bg-white p-3 rounded-xl shadow max-w-xs">
+        Sure! Here are some natural skincare products for you.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Input Area -->
+  <form class="p-4 border-t flex gap-2">
+    <input
+      type="text"
+      placeholder="Ask something..."
+      class="flex-1 border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+    />
+
+    <button
+      type="submit"
+      class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
+    >
+      Send
+    </button>
+  </form>
+
+</div>
+
+{% endblock %}
