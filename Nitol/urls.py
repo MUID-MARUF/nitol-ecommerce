@@ -1,6 +1,6 @@
 from .import views 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -11,6 +11,5 @@ urlpatterns = [
     path('cart/', views.cart, name = 'cart'),
     path('profile/', views.profile, name = 'profile'),
     path('contact/', views.contact, name = 'contact'),
-    path('login/', views.login, name = 'login'),
-    path('signup/', views.signup, name = 'signup'),
+    path('', include('store.urls')),
 ]
