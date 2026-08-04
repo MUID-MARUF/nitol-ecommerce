@@ -12,12 +12,15 @@
     {% tailwind_css %}
   </head>
 
-  <body class="bg-gray-50">
+  <!-- Add dark mode support -->
+  <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
     <!-- Navbar -->
     {% include "includes/navbar.html" %}
 
     <!-- Main Content -->
-    <main class="min-h-screen">{% block content %}{% endblock %}</main>
+    <main class="min-h-screen px-4 sm:px-6 lg:px-8">
+      {% block content %}{% endblock %}
+    </main>
 
     <!-- Footer -->
     {% include "includes/footer.html" %}
