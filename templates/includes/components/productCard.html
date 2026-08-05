@@ -1,7 +1,7 @@
-<div class="w-full max-w-xs mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+<a href="/product/{{ product.id }}/" 
+   class="block w-full max-w-xs mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
 
   <!-- Image -->
-
   <div class="relative">
     <img
       src="{{ product.image.url }}"
@@ -9,42 +9,33 @@
       class="w-full h-44 object-cover"
     />
 
-<!-- Category badge -->
-<span class="absolute top-2 left-2 bg-green-500 text-white text-[10px] px-2 py-0.5 rounded-full">
-  {{ product.category.name }}
-</span>
-
+    <!-- Category badge -->
+    <span class="absolute top-2 left-2 bg-green-500 text-white text-[10px] px-2 py-0.5 rounded-full">
+      {{ product.category.name }}
+    </span>
   </div>
 
   <!-- Content -->
-
   <div class="p-3">
 
-<!-- Title -->
-<h2 class="text-sm font-semibold text-gray-800 dark:text-white line-clamp-1">
-  {{ product.name }}
-</h2>
+    <!-- Title -->
+    <h2 class="text-sm font-semibold text-gray-800 dark:text-white line-clamp-1">
+      {{ product.name }}
+    </h2>
 
-<!-- Price -->
-<p class="text-green-600 font-bold text-sm mt-1">
-  ৳{{ product.price }}
-</p>
+    <!-- Price -->
+    <p class="text-green-600 font-bold text-sm mt-1">
+      ৳{{ product.price }}
+    </p>
 
-<!-- Buttons -->
-<div class="flex gap-2 mt-3">
-
-  <button
-    class="flex-1 bg-green-600 text-white py-1.5 rounded-md hover:bg-green-700 transition text-xs">
-    Add
-  </button>
-
-  <a href="/product/{{ product.id }}/"
-     class="px-2 py-1.5 border border-gray-300 dark:border-gray-600 rounded-md text-xs hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-    View
-  </a>
-
-</div>
+    <!-- Button -->
+    <div class="mt-3">
+      <button
+        class="w-full bg-green-600 text-white py-1.5 rounded-md hover:bg-green-700 transition text-xs">
+        Add to Cart
+      </button>
+    </div>
 
   </div>
 
-</div>
+</a>

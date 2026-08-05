@@ -2,32 +2,13 @@
 {% extends "base.html" %} {% block title %}Home | Nitol{% endblock %} 
 {%block content %}
 {% load static %}
+<div><br></div>
 <div>
     <!-- Hero Section -->
     <section class="w-full h-[60vh] relative">
-
         <!-- Background Image -->
         <img src="{% static 'images/hero.jpg' %}"
-            class="w-full h-full object-cover">
-
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-            
-            <div class="text-center text-white px-4">
-            <h1 class="text-3xl sm:text-5xl font-bold mb-4">
-                Embrace Natural Beauty 🌿
-            </h1>
-            <p class="text-sm sm:text-lg mb-6">
-                Organic products crafted for your skin
-            </p>
-
-            <a href="/products/"
-                class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg">
-                Shop Now
-            </a>
-            </div>
-
-        </div>
+            class="w-full h-full">
 
     </section>
 
