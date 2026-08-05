@@ -14,6 +14,8 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('contact/', views.contact, name='contact'),
     path('', include('store.urls')),
+    path('product/<int:id>/', views.product_detail, name='product_detail'),
+    path('profile/edit/', views.edit_profile, name='edit_profile'),
 ]
 
 # Only when DEBUG=True

@@ -4,96 +4,104 @@
 
 {% block content %}
 
-<div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+<div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
 
   <!-- LEFT: FORM -->
-  <div class="md:col-span-2 bg-white p-6 rounded-xl shadow-md">
 
-    <h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
+  <div class="md:col-span-2 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-neutral-700">
 
-    <form action="#" method="POST" class="space-y-4">
+<h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">
+  Get in Touch 🌿
+</h2>
 
-      <div>
-        <label class="block mb-1 font-medium">Full Name</label>
-        <input type="text" name="name"
-          class="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-          placeholder="your name" required>
-      </div>
+<form action="#" method="POST" class="space-y-5">
+  {% csrf_token %}
 
-      <div>
-        <label class="block mb-1 font-medium">Email Address</label>
-        <input type="email" name="email"
-          class="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-          placeholder="example@yahoo.com" required>
-      </div>
+  <div>
+    <label class="block mb-1 text-sm font-medium text-gray-600 dark:text-gray-300">Full Name</label>
+    <input type="text" name="name"
+      class="w-full px-4 py-2 rounded-lg bg-gray-50 dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-green-500 focus:outline-none transition"
+      placeholder="John Doe" required>
+  </div>
 
-      <div>
-        <label class="block mb-1 font-medium">Subject</label>
-        <select name="subject"
-          class="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-green-500" required>
-          <option disabled selected>Select an option</option>
-          <option>General Inquiry</option>
-          <option>Product Support & Feedback</option>
-          <option>Wholesale & Reseller Partnerships</option>
-          <option>Sustainability & Sourcing Questions</option>
-        </select>
-      </div>
+  <div>
+    <label class="block mb-1 text-sm font-medium text-gray-600 dark:text-gray-300">Email Address</label>
+    <input type="email" name="email"
+      class="w-full px-4 py-2 rounded-lg bg-gray-50 dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-green-500 focus:outline-none transition"
+      placeholder="you@example.com" required>
+  </div>
 
-      <div>
-        <label class="block mb-1 font-medium">Message</label>
-        <textarea name="message" rows="5"
-          class="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-          placeholder="How can we assist you today?" required></textarea>
-      </div>
+  <div>
+    <label class="block mb-1 text-sm font-medium text-gray-600 dark:text-gray-300">Subject</label>
+    <select name="subject"
+      class="w-full px-4 py-2 rounded-lg bg-gray-50 dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-green-500 focus:outline-none transition" required>
+      <option disabled selected>Select an option</option>
+      <option>General Inquiry</option>
+      <option>Product Support & Feedback</option>
+      <option>Wholesale & Reseller Partnerships</option>
+      <option>Sustainability & Sourcing Questions</option>
+    </select>
+  </div>
 
-      <button type="submit"
-        class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
-        Send Message
-      </button>
+  <div>
+    <label class="block mb-1 text-sm font-medium text-gray-600 dark:text-gray-300">Message</label>
+    <textarea name="message" rows="5"
+      class="w-full px-4 py-2 rounded-lg bg-gray-50 dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-green-500 focus:outline-none transition"
+      placeholder="How can we assist you today?" required></textarea>
+  </div>
 
-    </form>
+  <button type="submit"
+    class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium transition shadow-md hover:shadow-lg">
+    Send Message
+  </button>
+
+</form>
+
   </div>
 
   <!-- RIGHT: SIDEBAR -->
-  <div class="bg-white p-6 rounded-xl shadow-md space-y-6">
 
-    <h2 class="text-xl font-semibold">Direct Communication</h2>
+  <div class="bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-neutral-700 space-y-6">
 
-    <div>
-      <h3 class="font-medium">Corporate</h3>
-      <a href="mailto:nitol.falcon@gmail.com" class="text-green-600 hover:underline">
-        nitol.falcon@gmail.com
-      </a>
-    </div>
+<h2 class="text-xl font-semibold text-gray-800 dark:text-white">
+  Contact Info
+</h2>
 
-    <div>
-      <h3 class="font-medium">Partnerships</h3>
-      <a href="mailto:muidmarufa2@gmail.com" class="text-green-600 hover:underline">
-        muidmarufa2@gmail.com
-      </a>
-    </div>
+<div>
+  <h3 class="font-medium text-gray-700 dark:text-gray-300">Corporate</h3>
+  <a href="mailto:nitol.falcon@gmail.com" class="text-green-600 hover:underline text-sm">
+    nitol.falcon@gmail.com
+  </a>
+</div>
 
-    <div>
-      <h3 class="font-medium">Phone</h3>
-      <p>+880 1757 003 410</p>
-      <p class="text-sm text-gray-500">
-        Sun–Thu, 9:00 AM – 6:00 PM
-      </p>
-    </div>
+<div>
+  <h3 class="font-medium text-gray-700 dark:text-gray-300">Partnerships</h3>
+  <a href="mailto:muidmarufa2@gmail.com" class="text-green-600 hover:underline text-sm">
+    muidmarufa2@gmail.com
+  </a>
+</div>
 
-    <div>
-      <h3 class="font-medium">Help Center</h3>
-      <p class="text-sm text-gray-600">
-        Explore our FAQ for quick answers.
-      </p>
-    </div>
+<div>
+  <h3 class="font-medium text-gray-700 dark:text-gray-300">Phone</h3>
+  <p class="text-sm text-gray-800 dark:text-gray-200">+880 1757 003 410</p>
+  <p class="text-xs text-gray-500 dark:text-gray-400">
+    Sun–Thu, 9:00 AM – 6:00 PM
+  </p>
+</div>
 
-    <div class="bg-green-50 p-4 rounded-lg text-sm">
-      <strong>Our Commitment:</strong>
-      <p>
-        We respond within 24–48 business hours.
-      </p>
-    </div>
+<div>
+  <h3 class="font-medium text-gray-700 dark:text-gray-300">Help Center</h3>
+  <p class="text-sm text-gray-600 dark:text-gray-400">
+    Explore our FAQ for quick answers.
+  </p>
+</div>
+
+<div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg text-sm text-gray-700 dark:text-gray-300 border border-green-100 dark:border-green-800">
+  <strong>Our Commitment:</strong>
+  <p class="mt-1">
+    We respond within 24–48 business hours.
+  </p>
+</div>
 
   </div>
 

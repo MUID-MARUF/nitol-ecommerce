@@ -1,5 +1,6 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
 from store.models import Product
 from store.models import Category
 
@@ -46,3 +47,31 @@ def profile(request):
 
 def contact(request):
     return render(request, 'contact/contact.html')
+
+def product_detail(request, id):
+    product = Product.objects.get(id=id)
+    return render(request, 'products/productDetails.html', {
+        'product': product
+    })
+
+@login_required
+def edit_profile(request):
+    if request.method == 'POST':
+        user = request.user
+
+        user.first_name = request.POST.get('name')
+        user.email = request.POST.get('email')
+        user.save()
+
+        profile = user.profile
+        profile.phone = request.POST.get('phone')
+        profile.address = request.POST.get('address')
+
+        if request.FILES.get('image'):
+            profile.image = request.FILES.get('image')
+
+        profile.save()
+
+        return redirect('/profile/')
+
+    return render(request, 'profile/editProfile.html')
