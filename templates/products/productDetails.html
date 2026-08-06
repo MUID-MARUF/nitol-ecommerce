@@ -6,51 +6,99 @@
 
 <div class="max-w-6xl mx-auto px-4 py-10">
 
-  <div class="grid md:grid-cols-2 gap-8 items-center">
-<!-- LEFT: IMAGE -->
-<div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-4">
-  <img 
-    src="{{ product.image.url }}" 
-    alt="{{ product.name }}"
-    class="w-full h-[350px] object-cover rounded-xl">
+  <div class="grid md:grid-cols-2 gap-10 items-start">
+
+    <!-- LEFT: IMAGE -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-4">
+      <img 
+        src="{{ product.image.url }}" 
+        alt="{{ product.name }}"
+        class="w-full h-[350px] object-cover rounded-xl hover:scale-105 transition duration-300">
     </div>
 
     <!-- RIGHT: DETAILS -->
-    <div class="space-y-4">
+    <div class="space-y-5">
 
-    <!-- Category -->
-    <span class="inline-block bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs px-3 py-1 rounded-full">
+      <!-- Category -->
+      <span class="inline-block bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs px-3 py-1 rounded-full">
         {{ product.category.name }}
-    </span>
+      </span>
 
-    <!-- Title -->
-    <h1 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white">
+      <!-- Title -->
+      <h1 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white">
         {{ product.name }}
-    </h1>
+      </h1>
 
-    <!-- Price -->
-    <p class="text-2xl font-bold text-green-600">
+      <!-- Price -->
+      <p class="text-3xl font-bold text-green-600">
         ৳{{ product.price }}
-    </p>
+      </p>
 
-    <!-- Description -->
-    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+      <!-- Description -->
+      <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
         {{ product.description|default:"No description available for this product." }}
-    </p>
+      </p>
 
-    <!-- Buttons -->
-    <div class="flex gap-3 pt-4">
+      <!-- Quantity Selector -->
+      <div class="flex items-center gap-3 pt-2">
 
-        <button class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition">
-        Add to Cart
+        <button onclick="decreaseQty()"
+          class="w-9 h-9 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">
+          −
         </button>
 
-    </div>
+        <span id="qty" class="text-lg font-semibold text-gray-800 dark:text-white">1</span>
+
+        <button onclick="increaseQty()"
+          class="w-9 h-9 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">
+          +
+        </button>
+
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex gap-3 pt-4">
+
+        <!-- Add to Cart -->
+        <button
+          onclick="addToCart({{ product.id }})"
+          class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition shadow-sm hover:shadow-md">
+          Add to Cart
+        </button>
+
+        <!-- Back -->
+        <a href="/products/"
+          class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+          Back
+        </a>
+
+      </div>
 
     </div>
 
   </div>
 
 </div>
+
+<!-- JS -->
+<script>
+let quantity = 1;
+
+function increaseQty() {
+  quantity++;
+  document.getElementById('qty').innerText = quantity;
+}
+
+function decreaseQty() {
+  if (quantity > 1) {
+    quantity--;
+    document.getElementById('qty').innerText = quantity;
+  }
+}
+
+function addToCart(productId) {
+  window.location.href = `/add-to-cart/${productId}/?qty=${quantity}`;
+}
+</script>
 
 {% endblock %}
